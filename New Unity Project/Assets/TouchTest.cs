@@ -8,7 +8,8 @@ public class TouchTest : MonoBehaviour {
 	// Update is called once per frame
 	void OnGUI () {
 		Touch[] touches = Input.touches;
-		Debug.Log ("TOUCHES: " + touches.Length);
+		Debug.developerConsoleVisible = true;
+		Debug.LogError ("TOUCHES: " + touches.Length);
 		for(int i = 0; i < touches.Length; i++) {
 			Vector2 pos = new Vector2(touches[i].position.x - 32f, Screen.height - touches[i].position.y - 32f);
 			GUI.DrawTexture(new Rect(pos, Vector2.one * 64f), touchTexture);
